@@ -34,7 +34,6 @@ module.exports = {
         loader: 'ts-loader',
         include: [resolve('src'), resolve('test')],
         options: {
-          appendTsSuffixTo: [/\.vue$/],
           transpileOnly: true
         }
       },
@@ -82,6 +81,6 @@ module.exports = {
     child_process: 'empty'
   },
   plugins: [
-    new ForkTsCheckerWebpackPlugin({ tslint: true, async: false })
+    new ForkTsCheckerWebpackPlugin({tslint: true, async: false, vue: true})
   ]
 }
